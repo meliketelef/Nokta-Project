@@ -1,0 +1,239 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Genel Ayarlar */
+body {
+  font-family: Arial, sans-serif; 
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #f9f4ef, #f2e9dc); 
+  color: #333; 
+}
+
+/* Başlıklar */
+.title, .characters-title {
+  text-align: center;
+  font-size: 3rem;
+  margin: 20px 0;
+}
+
+.title {
+  color: #00b3e6; 
+  text-shadow: 2px 2px 5px #003b51, 0 0 10px #00b3e6;
+}
+
+.characters-title {
+  color: #FFD700; 
+  text-shadow: 2px 2px 5px #000000, 0 0 10px #FFD700;
+}
+
+/* Filtreleme Alanı */
+.filters-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px auto;
+  background-color: #fff8e1; 
+  padding: 20px;
+  border-radius: 10px; 
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); 
+  width: fit-content;
+}
+
+.filters-container input,
+.filters-container select {
+  padding: 10px 15px;
+  font-size: 1.2rem; 
+  border: 2px solid #FFD700; 
+  border-radius: 10px; 
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.filters-container input:focus,
+.filters-container select:focus {
+  outline: none; 
+  transform: scale(1.05); 
+  box-shadow: 2px 2px 12px rgba(255, 215, 0, 0.6); 
+}
+
+.filters-container input::placeholder {
+  color: #999; 
+  font-style: italic;
+}
+
+.filters-container select {
+  background-color: #FFF8DC;
+  cursor: pointer;
+}
+
+/* Tablo Alanı */
+table {
+  width: 80%; 
+  margin: 20px auto; 
+  border-collapse: collapse; 
+  background-color: white; 
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  overflow: hidden; 
+}
+
+table thead tr {
+  background-color: #fbc02d; 
+  color: white; 
+}
+
+table th, table td {
+  padding: 10px; 
+  text-align: center; 
+  font-weight: bold; 
+  border: 1px solid #ddd; 
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; 
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+table tfoot td {
+  text-align: center; 
+  padding: 15px;
+  background-color: #fff8e1; 
+  border-top: 1px solid #ddd;
+}
+
+/* Tablo Butonları */
+tfoot button {
+  margin: 0 10px;
+  padding: 8px 12px;
+  background-color: #fbc02d; 
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px; 
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+tfoot button:hover {
+  background-color: #e5a900; 
+}
+
+tfoot button:disabled {
+  background-color: #ddd;
+  color: #888;
+  cursor: not-allowed;
+}
+
+/* Seçilen Karakter Detayları */
+.character-details {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 400px;
+  background-color: #f9f4ef; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.character-details img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.character-details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.character-details th,
+.character-details td {
+  text-align: left;
+  padding: 10px;
+}
+
+.character-details th {
+  background-color: #d1c7ba; 
+  color: #333;
+}
+
+.character-details td {
+  background-color: #fff;
+  border: 1px solid #d1c7ba; 
+}
+
+/* Sayfa Boyutu */
+.page-size-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 10px; 
+  margin: 20px auto; 
+  padding: 10px 20px; 
+  background-color: #fff8e1; 
+  border-radius: 10px; 
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); 
+  width: fit-content; 
+}
+
+.page-size-container label {
+  font-size: 1.2rem; 
+  font-weight: bold;
+  color: #333; 
+}
+
+.page-size-container select {
+  padding: 10px 15px; 
+  font-size: 1.2rem; 
+  border: 2px solid #FFD700; 
+  border-radius: 10px; 
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); 
+  background-color: #FFF8DC; 
+  cursor: pointer; 
+  transition: transform 0.2s, box-shadow 0.2s; 
+}
+
+.page-size-container select:focus {
+  outline: none; 
+  transform: scale(1.05); 
+  box-shadow: 2px 2px 12px rgba(255, 215, 0, 0.6); 
+}
