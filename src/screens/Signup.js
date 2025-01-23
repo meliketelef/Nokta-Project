@@ -1,38 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const SignupStep1 = ({ onNext }) => {
   const [formData, setFormData] = useState({
     email: "",
-    contactNumber: "",
+    //contactNumber: "+90",
     countryCode: "+90",
     passwordHash: "",
     confirmPassword: "",
   });
 
   const [passwordError, setPasswordError] = useState("");
-  const [countries, setCountries] = useState([]);
-
-  useEffect(() => {
-    const fetchCountries = async () => {
-      try {
-        const response = await fetch("https://restcountries.com/v3.1/all");
-        const data = await response.json();
-        const countryData = data
-          .map((country) => ({
-            name: country.name.common,
-            code: country.idd.root
-              ? country.idd.root + (country.idd.suffixes?.[0] || "")
-              : "",
-          }))
-          .filter((country) => country.code);
-        setCountries(countryData);
-      } catch (error) {
-        console.error("Error fetching country data:", error);
-      }
-    };
-
-    fetchCountries();
-  }, []);
 
   const validatePassword = (password) => {
     const regex =
@@ -43,20 +20,28 @@ const SignupStep1 = ({ onNext }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    if (name === "passwordHash") {
-      if (!validatePassword(value)) {
-        setPasswordError(
-          "Password must be at least 6 characters long, include 1 uppercase, 1 lowercase, 1 digit, and 1 special character."
-        );
-      } else {
-        setPasswordError("");
+    if (name === "countryCode") {
+      setFormData({
+        ...formData,
+        [name]: value,
+        contactNumber: value,
+      });
+    } else {
+      if (name === "passwordHash") {
+        if (!validatePassword(value)) {
+          setPasswordError(
+            "Password must be at least 6 characters long, include 1 uppercase, 1 lowercase, 1 digit, and 1 special character."
+          );
+        } else {
+          setPasswordError("");
+        }
       }
-    }
 
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const handleNext = (e) => {
@@ -94,15 +79,9 @@ const SignupStep1 = ({ onNext }) => {
             value={formData.countryCode}
             onChange={handleChange}
             required
+            style={{ width: "30%", marginRight: "10px" }}
           >
-            <option value="" disabled>
-              Select code
-            </option>
-            {countries.map((country) => (
-              <option key={country.name} value={country.code}>
-                {country.name} ({country.code})
-              </option>
-            ))}
+            <option value="+90">(+90)</option>
           </select>
           <input
             type="text"
@@ -111,6 +90,7 @@ const SignupStep1 = ({ onNext }) => {
             value={formData.contactNumber}
             onChange={handleChange}
             required
+            style={{ width: "65%" }}
           />
         </div>
       </div>
@@ -379,6 +359,7 @@ const Signup = () => {
     description: "",
     email: "",
     contactNumber: "",
+    countryCode: "+90",
     passwordHash: "",
   });
 
