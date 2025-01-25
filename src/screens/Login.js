@@ -5,7 +5,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate(); // Yönlendirme için kullanılır
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,8 +36,7 @@ const Login = () => {
       alert("Login successful!");
       console.log("Response:", result);
 
-      navigate("/home");
-      window.open("/HomePage.html", "_blank");
+      navigate("/homepage"); // Login sonrası HomePage'e yönlendirme
     } catch (err) {
       console.error("Fetch Error:", err);
       alert(

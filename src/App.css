@@ -4,13 +4,9 @@ body {
   font-family: "Arial", sans-serif;
   background-color: #1e1e2f;
   color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
 }
 
-/* Ana Container */
+/* Login ve Signup için */
 .App {
   display: flex;
   flex-direction: column;
@@ -22,238 +18,32 @@ body {
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
   padding: 40px;
+  margin: auto;
 }
 
-/* Form Alanı */
-form {
+/* HomePage için */
+.home-container {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  height: 100vh;
+  background-color: #1e1e2f;
+  padding: 20px;
 }
 
-/* Giriş Alanı */
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #cccccc;
-  font-size: 16px;
-  background-color: #f9f9f9;
-  box-sizing: border-box;
-  margin-top: 8px;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: none;
-  border-color: #007bff;
-  background-color: #ffffff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-/* Etiketler ve Giriş Kutuları */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-label {
-  display: block; /* Her etiket kendi satırında */
-  margin-bottom: 5px; /* Yazı ile input arasındaki boşluk */
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/* Butonlar */
-.button-container {
-  display: flex; /* Butonları yatay olarak hizalamak için */
-  justify-content: space-between; /* Butonlar arasında boşluk bırakır */
-  gap: 10px; /* Butonlar arasındaki mesafeyi ayarlar */
-  margin-top: 20px; /* Üstteki içerikle boşluk bırakır */
-}
-
-button {
-  padding: 10px 20px; /* Buton boyutunu ayarlar */
-  border-radius: 5px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-/* Login ve Signup Butonları */
-.toggle-buttons {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
+/* Login/Signup Header */
+.App-header {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .toggle-buttons button {
   margin: 0 10px;
   padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #007bff;
-  background-color: transparent;
-  color: #007bff;
-  transition: all 0.3s ease-in-out;
-}
-
-.toggle-buttons button.active {
+  border: none;
   background-color: #007bff;
   color: white;
+  cursor: pointer;
 }
 
 .toggle-buttons button:hover {
   background-color: #0056b3;
-  color: white;
-}
-
-/* Checkbox Alanı */
-/* Checkbox Alanı */
-.checkbox-container {
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Daha büyük boşluk */
-}
-
-.checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  border: 2px solid #007bff;
-  border-radius: 8px;
-  background-color: #2c2c3e;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.checkbox-label:hover {
-  background-color: #1e1e2f;
-  border-color: #0056b3;
-}
-
-.checkbox-input {
-  width: 20px;
-  height: 20px;
-  accent-color: #007bff;
-  cursor: pointer;
-}
-
-/* Checkbox işaretlendiğinde renk değişikliği */
-.checkbox-input:checked + span {
-  color: #007bff;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-/* Submit Butonu */
-.submit-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 18px;
-  margin-top: 15px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.submit-button:hover {
-  background-color: #0056b3;
-}
-
-/* Saat Giriş Alanları */
-.time-inputs label {
-  font-size: 16px;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-}
-
-.time-inputs input[type="text"] {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #cccccc;
-  font-size: 16px;
-  background-color: #f9f9f9;
-  color: #333;
-  box-sizing: border-box;
-}
-
-.time-inputs input[type="text"]:focus {
-  outline: none;
-  border-color: #007bff;
-  background-color: #ffffff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-/* Başlık Düzenlemesi */
-h1,
-h2,
-h3 {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  text-align: center;
-  color: #ffffff;
-}
-/* Logo Ayarları */
-.logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px; /* Logonun altındaki boşluk */
-}
-
-.logo-container img {
-  width: 350px; /* Logonun genişliği */
-  height: auto; /* Oranları koruyarak yükseklik ayarı */
-  object-fit: contain; /* Logonun düzgün görünmesi için */
-}
-.phone-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.phone-inputs {
-  display: flex;
-  gap: 10px;
-}
-
-.phone-inputs select,
-.phone-inputs input {
-  flex: 1;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #cccccc;
-  font-size: 16px;
-  background-color: #f9f9f9;
-  box-sizing: border-box;
-}
-
-.phone-inputs select {
-  max-width: 200px; /* Alan kodu seçeneği genişliğini kontrol etmek için */
-}
-
-.phone-inputs input {
-  flex: 2; /* Telefon numarası giriş alanının genişliğini ayarlamak için */
 }
