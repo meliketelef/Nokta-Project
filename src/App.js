@@ -2,11 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Login from "./screens/Login";
 import Signup from "./screens/Signup";
-import HomePage from "./screens/HomePage";
-import logo from "./images/NoktaLogo.png";
-import "./App.css";
-
-// Import templates
 import Template1 from "./screens/templates/Template1";
 import Template2 from "./screens/templates/Template2";
 import Template3 from "./screens/templates/Template3";
@@ -23,12 +18,14 @@ import Template13 from "./screens/templates/Template13";
 import Template14 from "./screens/templates/Template14";
 import Template15 from "./screens/templates/Template15";
 import Template16 from "./screens/templates/Template16";
+import logo from "./images/NoktaLogo.png";
+import "./App.css";
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Login and Signup routes with HeaderLayout */}
+        {/* Login and Signup routes */}
         <Route
           path="/"
           element={
@@ -45,10 +42,9 @@ function App() {
             </HeaderLayout>
           }
         />
-        <Route path="/homepage" element={<HomePage />} />
 
         {/* Dynamic template routes */}
-        <Route path="/template1" element={<Template1 />} />
+        <Route path="/template1/*" element={<Template1 />} />
         <Route path="/template2" element={<Template2 />} />
         <Route path="/template3" element={<Template3 />} />
         <Route path="/template4" element={<Template4 />} />
