@@ -45,21 +45,21 @@ function App() {
 
         {/* Dynamic template routes */}
         <Route path="/template1/*" element={<Template1 />} />
-        <Route path="/template2" element={<Template2 />} />
-        <Route path="/template3" element={<Template3 />} />
-        <Route path="/template4" element={<Template4 />} />
-        <Route path="/template5" element={<Template5 />} />
-        <Route path="/template6" element={<Template6 />} />
-        <Route path="/template7" element={<Template7 />} />
-        <Route path="/template8" element={<Template8 />} />
-        <Route path="/template9" element={<Template9 />} />
-        <Route path="/template10" element={<Template10 />} />
-        <Route path="/template11" element={<Template11 />} />
-        <Route path="/template12" element={<Template12 />} />
-        <Route path="/template13" element={<Template13 />} />
-        <Route path="/template14" element={<Template14 />} />
-        <Route path="/template15" element={<Template15 />} />
-        <Route path="/template16" element={<Template16 />} />
+        <Route path="/template2/*" element={<Template2 />} />
+        <Route path="/template3/*" element={<Template3 />} />
+        <Route path="/template4/*" element={<Template4 />} />
+        <Route path="/template5/*" element={<Template5 />} />
+        <Route path="/template6/*" element={<Template6 />} />
+        <Route path="/template7/*" element={<Template7 />} />
+        <Route path="/template8/*" element={<Template8 />} />
+        <Route path="/template9/*" element={<Template9 />} />
+        <Route path="/template10/*" element={<Template10 />} />
+        <Route path="/template11/*" element={<Template11 />} />
+        <Route path="/template12/*" element={<Template12 />} />
+        <Route path="/template13/*" element={<Template13 />} />
+        <Route path="/template14/*" element={<Template14 />} />
+        <Route path="/template15/*" element={<Template15 />} />
+        <Route path="/template16/*" element={<Template16 />} />
       </Routes>
     </Router>
   );
