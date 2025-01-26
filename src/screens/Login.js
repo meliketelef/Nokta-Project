@@ -7,11 +7,35 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  const handleLoginSuccess = async (email) => {
+    try {
+      // Fetch user details to get webSiteTemplateID
+      const response = await fetch(
+        `https://nokta-appservice.azurewebsites.net/api/Business/email/${email}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (!response.ok) throw new Error("Failed to fetch user details");
+
+      const userData = await response.json();
+      const { webSiteTemplateID } = userData;
+
+      // Navigate to the appropriate template based on webSiteTemplateID
+      navigate(`/template${webSiteTemplateID}`);
+    } catch (error) {
+      console.error("Error fetching user details:", error);
+      alert("Failed to fetch user details. Please try again.");
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
-    const loginData = { email, password };
 
     try {
       const response = await fetch(
@@ -21,27 +45,21 @@ const Login = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(loginData),
+          body: JSON.stringify({ email, password }),
         }
       );
 
       if (!response.ok) {
-        const error = await response.text();
-        alert(`Login failed: ${error || "Unknown error occurred"}`);
-        setLoading(false);
-        return;
+        const errorMessage = await response.text();
+        throw new Error(errorMessage);
       }
 
-      const result = await response.json();
       alert("Login successful!");
-      console.log("Response:", result);
-
-      navigate("/homepage"); // Login sonrası HomePage'e yönlendirme
+      // Fetch user details and navigate to the correct template
+      await handleLoginSuccess(email);
     } catch (err) {
-      console.error("Fetch Error:", err);
-      alert(
-        "An error occurred while sending the request. Check console for details."
-      );
+      console.error("Login error:", err);
+      alert("Login failed. Please check your credentials.");
     } finally {
       setLoading(false);
     }
