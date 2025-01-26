@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Login from "./screens/Login";
 import Signup from "./screens/Signup";
 import HomePage from "./screens/HomePage";
-import "./App.css";
 import logo from "./images/NoktaLogo.png";
+import "./App.css";
 
 // Import templates
 import Template1 from "./screens/templates/Template1";
