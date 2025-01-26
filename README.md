@@ -1,3 +1,9 @@
+# Nokta-Project
+
+Bu proje, Nokta-Project adlı bir uygulama geliştirmek için oluşturulmuştur.
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
