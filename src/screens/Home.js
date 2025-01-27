@@ -18,7 +18,7 @@ const Home = () => {
         marginTop: '-20px',
         color: '#FFD700',
       }}>
-        Randevu Sistemi ile Tüm İhtiyaçlarınız Elinizin Altında!
+        All Your Needs at Your Fingertips with the Appointment System!
       </h1>
 
       <p style={{
@@ -31,12 +31,11 @@ const Home = () => {
         margin: '0 auto',     // Yazıyı yatayda ortalıyoruz
         textOverflow: 'ellipsis', // Taşan yazıyı "..." ile gösterir
       }}>
-        Hayatınızın parçası olan tüm gereksinim ve ihtiyaçlarınıza ulaşabileceğiniz
-        tek bir noktada buluşun. Bu randevu sistemi, sağlık, eğitim, güzellik, bakım
-        ve daha birçok alanda size en uygun hizmetleri kolayca bulmanızı sağlar. Zamanınızı
-        verimli kullanarak, hayatınızı kolaylaştıracak tüm hizmetlere tek bir adımda
-        erişebilirsiniz. Hem hızlı hem güvenilir randevu çözümleri ile hayatınızı düzenleyin,
-        her şey sizin için tek bir noktada!
+        You can reach all the requirements and needs that are part of your life at a single point. 
+        This appointment system makes it easy for you to find the most suitable services in various fields 
+        such as health, education, beauty, care, and many more. By using your time efficiently, 
+        you can access all the services that will make your life easier with just one step. 
+        Organize your life with fast and reliable appointment solutions, everything is in one NOKTA for you!
       </p>
 
       <img src={image} alt="Randevu Sistemi" style={{ width: '100%', maxWidth: '600px', height: 'auto' }} />
